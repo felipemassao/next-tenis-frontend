@@ -1,69 +1,70 @@
-import React, {useState} from 'react';
-import {useGetProduto} from "../hooks";
-import {useFormik} from "formik";
-import {Container} from "../styles/components/Shared";
-
-import {
-    Button,
-    Card,
-    CardBody,
-    Error,
-    Form,
-    Input,
-    Title,
-    Wrap
-} from "../styles/components/Home.style";
+import React, { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Carousel from "react-bootstrap/Carousel";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Header from "../components/Header";
 
 const HomePage = () => {
-    const [searchInput, setSearchInput] = useState(null)
-    const formik = useFormik({
-        initialValues: {
-            Produto: '',
-        },
-        onSubmit: (values) => {
-            setSearchInput(values.Produto.toLowerCase());
-        }
-    });
+  const [index, setIndex] = useState(0);
 
-    const {loading, error, Produto} = useGetProduto(searchInput);
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
-    return (
-        <Container>
-            <Wrap>
-                <Title>Consulta Produto por ID</Title>
-                <Form onSubmit={formik.handleSubmit}>
-                    <label htmlFor="Produto" hidden>Entre com o ID do produto</label>
-                    <Input type="text"
-                           name="Produto"
-                           placeholder="Código (ID) do Produto"
-                           onChange={formik.handleChange}
-                           onBlur={formik.handleBlur}
-                           value={formik.values.Produto}
-                    />
-                    <Button type="submit">Consultar</Button>
-                    {error && <Error>* Código inválido ou inexistente</Error>}
-                </Form>
-            </Wrap>
-            {!loading && Produto && (
-                <Wrap>
-                    <Title>Next-Tennis</Title>
-                    <Card>
-                        <CardBody>
-                            <h2>{Produto.descricao}</h2>
-                            <p>id: {Produto.id}</p>
-                            <p>Marca id: {Produto.marca_id}</p>
-                            <p>Modelo: {Produto.modelo}</p>
-                            <p>Cor id: {Produto.cor_id}</p>                            
-                            <p>Tamanho: {Produto.tamanho}</p>
-                            <p>Genero: {Produto.genero}</p>
-                            <p>Estilo id: {Produto.estilo_id}</p>
-                            <p>Preço: {Produto.preco}</p>
-                        </CardBody>
-                    </Card>
-                </Wrap>
-            )}
-        </Container>
-    );
-}
+  return (
+    <>
+      <Header />
+      <Container>
+        <Row>
+          <Col/>
+          <Col xs={6}>
+          <Carousel activeIndex={index} onSelect={handleSelect}>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={`${process.env.REACT_APP_BASE_URL}/images/produtos/1.jpg`}
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={`${process.env.REACT_APP_BASE_URL}/images/produtos/2.jpg`}
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={`${process.env.REACT_APP_BASE_URL}/images/produtos/3.jpg`}
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Third slide label</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+          </Col>
+          <Col/>
+        </Row>
+      </Container>
+        
+    </>
+  );
+};
 
 export default HomePage;

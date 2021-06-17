@@ -10,6 +10,7 @@ const useGetProduto = (Id) => {
     useEffect(() => {
         if (Id) {
             getProduto(Id).then((result) => {
+                console.log(result)
                 setError(null);
                 setProduto(result);
                 setLoading(false);
