@@ -12,7 +12,7 @@ const Routes = () => (
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/Produto" component={ConsultaProdutoId} />   
+        <Route exact path="/produto" component={ConsultaProdutoId} />   
         <Route exact path="/signin" component={Login} />               
         <PrivateRoute exact path="/manutencao" component={HomeManutencao} />   
         <PrivateRoute exact path="/manutencao/excluir" component={ManutExcluiProduto} />          
