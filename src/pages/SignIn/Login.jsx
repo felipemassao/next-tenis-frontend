@@ -28,7 +28,7 @@ const Login = () => {
                     const { data } = resp
                     if (data) {
                         localStorage.setItem('app-token', JSON.stringify(data))
-                        history.push('/manut')
+                        history.push('/manutencao')
                     }
                 }).catch(error => {
                     console.log("Deu erro ", error)

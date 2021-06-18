@@ -12,7 +12,6 @@ import {
     Error,
     Form,
     Input,
-    Title,
     Wrap
 } from "../../../styles/components/Home.style";
 
@@ -31,7 +30,7 @@ const ExcluirProdutoId = () => {
 
     const onDeleteProductClick = useCallback(()=> {
         axios.delete(`${process.env.REACT_APP_BASE_URL}/produtos/${Produto.id}`).then(() => setSearchInput(null) ) 
-        // history.push('/manut')
+        history.push('/manutencao')
 
     },[Produto])
 

@@ -9,8 +9,8 @@ const HomeManutencao = () => {
         <ContainerMenu>
             <NavMenu>
                 <UlMenu>
-                    <LiMenu><Link to="/Produto">Consulta Produto</Link></LiMenu>                                      
-                    <LiMenu><Link to="/manut/excluir">Excluir Produto</Link></LiMenu>
+                    <LiMenu><Link to="/produto">Consulta Produto</Link></LiMenu>                                      
+                    <LiMenu><Link to="/manutencao/excluir">Excluir Produto</Link></LiMenu>
                     </UlMenu>
             </NavMenu>
         </ContainerMenu>       
