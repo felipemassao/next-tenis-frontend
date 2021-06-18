@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { history } from '../history';
-import {Container} from '../../styles/components/Shared';
+import Container from "react-bootstrap/Container";
 
 import {
     Button,

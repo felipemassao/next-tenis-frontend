@@ -4,6 +4,7 @@ import {useFormik} from "formik";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import Header from '../../components/Header';
 
 import {
     Error,
@@ -27,7 +28,8 @@ const ConsultaProdutoId = () => {
     const {loading, error, Produto} = useGetProduto(searchInput);
 
     return (
-
+        <>
+        <Header />
             <Wrap>
             <Title>Consulta Produto por ID</Title>
             <Form onSubmit={formik.handleSubmit}>
@@ -65,6 +67,7 @@ const ConsultaProdutoId = () => {
                 </Container >
             )}
         </Wrap>
+    </>
     );
 }
 

@@ -78,7 +78,12 @@ export const LiMenu = styled.li`
 `
 
 export const NavMenu = styled.nav`
+  width: 100%;
   padding:0px;
   margin:0px;
+`
+
+export const HeaderMenu = styled.header`
+  position: fixed;
 `
 ;

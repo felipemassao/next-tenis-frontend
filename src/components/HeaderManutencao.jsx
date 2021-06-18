@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const HeaderManutencao = () => {
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
             <Navbar.Brand href="/">
@@ -14,15 +14,23 @@ const Header = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/produto">Consulta Produto</Nav.Link>
-                    </Nav>                   
+                        <Nav.Link href="/manutencao/incluir">Inclui Produto</Nav.Link>
+                        <Nav.Link href="/manutencao/alterar">Altera Produto</Nav.Link>
+                        <Nav.Link href="/manutencao/excluir">Deleta Produto</Nav.Link>
+                    </Nav>  
+
+                    <Nav className="mr-auto">
+                        <Nav.Link href="/manutencao/incluirUsu">Inclui Usuário</Nav.Link>
+                        <Nav.Link href="/manutencao/excluirUsu">Deleta Usuário</Nav.Link>
+                    </Nav> 
+
                     <Nav>
-                        <Button variant="light"><Link to="/signin">Restrito</Link></Button>
+                        <Button variant="light"><Link to="/">Logout</Link></Button>
                     </Nav>
                 </Navbar.Collapse>
         </Navbar>
     )
 };
 
-export default Header;
+export default HeaderManutencao;
