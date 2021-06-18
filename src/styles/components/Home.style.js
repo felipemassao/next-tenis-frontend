@@ -63,3 +63,22 @@ export const CardBody = styled.div`
   padding: 24px;
   background-color: limegreen;
 `
+
+export const UlMenu = styled.ul`
+  padding:0px;
+  margin:0px;
+  list-style:none;
+  display: inline;
+`
+
+export const LiMenu = styled.li`
+  padding: 2px 10px;
+  display: inline-block;
+  display: inline;
+`
+
+export const NavMenu = styled.nav`
+  padding:0px;
+  margin:0px;
+`
+;
