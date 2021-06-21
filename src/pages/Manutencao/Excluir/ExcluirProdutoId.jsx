@@ -1,9 +1,10 @@
 import React, {useCallback, useState} from 'react';
 import {useGetProduto} from '../../../hooks';
 import {useFormik} from "formik";
-import {Container} from '../../../styles/components/Shared';
+import Container from "react-bootstrap/Container";
 import axios from 'axios';
 import { history } from '../../history';
+import HeaderManutencao from '../../../components/HeaderManutencao';
 
 import {
     Button,
@@ -35,6 +36,9 @@ const ExcluirProdutoId = () => {
     },[Produto])
 
     return (
+        <>
+        <HeaderManutencao />
+
         <Container>
             <Wrap>
                 <h3>Informe o Produto que deseja Excluir</h3>
@@ -75,6 +79,7 @@ const ExcluirProdutoId = () => {
             </button> 
 
         </Container>
+      </>
     );
 }
 

@@ -1,0 +1,1 @@
+export { default as IncluiUsuario } from '../IncluirUsu/IncluirUsuario';
