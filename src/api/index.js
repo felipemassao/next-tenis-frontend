@@ -1,1 +1,1 @@
-export { default as getProduto } from './produto';
+export { getProduto, listProduto } from './produto';
