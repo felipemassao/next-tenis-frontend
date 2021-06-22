@@ -1,4 +1,4 @@
-import { useGetListarProdutos } from '../../../hooks';
+import { useListProduto } from '../../../hooks';
 import HeaderManutencao from '../../../components/HeaderManutencao';
 import { GridComponent } from '@syncfusion/ej2-react-grids';
 import Container from 'react-bootstrap/Container';
@@ -8,26 +8,28 @@ import './ListarProduto.css';
 
 const ListarProduto = () => {
 
-    const { loading, error, Produto } = useGetListarProdutos();
+    const { loading, error, produtos } = useListProduto();
+    console.log(produtos);
 
-    console.log(Produto);
+    const createProdutoArray = (produtos) => {
+        const produtoArray = [];
+        for (let i = 0; i < produtos.length; i++) {
+            produtoArray.push(produtos[i])
+        }
+        return produtoArray;
+    }
 
     return (
         <>
-
-            {/*          {error && <Error>* Erro na leitura dos dados</Error>}
-         {!loading && Produto && (
- */}
-
-            <Container>
-                <HeaderManutencao />
-                <div style={{ margin: '10%', marginTop: '5%' }}>
-                    <GridComponent dataSource={Produto} />
-                </div>
-            </Container>
-
-            {/* )} */}
-
+            {error && <Error>* Erro na leitura dos dados</Error>}
+            {!loading && produtos && (
+                <Container>
+                    <HeaderManutencao />
+                    <div style={{ margin: '10%', marginTop: '5%' }}>
+                        <GridComponent dataSource={createProdutoArray} />
+                    </div>
+                </Container>
+            )}
         </>
     );
 }
