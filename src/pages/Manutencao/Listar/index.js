@@ -1,0 +1,1 @@
+export { default as ListarProduto } from './ConsultaProdutoAll';

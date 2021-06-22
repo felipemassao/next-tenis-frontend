@@ -9,7 +9,8 @@ import {
     Form,
     Input,
     Title,
-    Wrap,
+    WrapLogin,
+    BackgroundLogin
 } from "../../styles/components/Home.style";
 
 const Login = () => {
@@ -40,8 +41,9 @@ const Login = () => {
     });
 
     return (
+      <BackgroundLogin>
         <Container>
-            <Wrap>
+            <WrapLogin>
                 <Title>Login Usuário</Title>
                 <Form onSubmit={formik.handleSubmit}>
                     <label htmlFor="username" hidden>Entre com seu nome de usuário</label>
@@ -62,8 +64,9 @@ const Login = () => {
                     />                    
                     <Button type="submit">Entrar</Button>
                 </Form>
-            </Wrap>
+            </WrapLogin>
         </Container>
+      </BackgroundLogin>
     );
 }
 
