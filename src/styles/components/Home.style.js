@@ -86,4 +86,15 @@ export const NavMenu = styled.nav`
 export const HeaderMenu = styled.header`
   position: fixed;
 `
-;
+
+export const BackgroundLogin = styled.body`
+  background: url(../images/login_backend.png) no-repeat center center fixed;
+  background-size: cover;
+`
+
+export const WrapLogin = styled.div`
+  max-width: 300px;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 20px;
+`

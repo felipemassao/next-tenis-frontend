@@ -31,6 +31,7 @@ const ExcluirProdutoId = () => {
 
     const onDeleteProductClick = useCallback(()=> {
         axios.delete(`${process.env.REACT_APP_BASE_URL}/produtos/${Produto.id}`).then(() => setSearchInput(null) ) 
+        alert("Produto Excluído !")
         history.push('/manutencao')
 
     },[Produto])
