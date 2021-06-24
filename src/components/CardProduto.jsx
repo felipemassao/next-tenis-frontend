@@ -1,19 +1,19 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
-// import Container from 'react-bootstrap/Container';
+import { history } from '../pages/history';
 
 const CardProduto = ({ Produto }) => {
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Body>
-        <Carousel fade indicators={false} controls={false}>
+        <Carousel fade indicators={false} controls={false} interval={2000}>
           {Produto.fotos.map((foto) => (
             <Carousel.Item>
               <img
+                onClick={() => history.push(`/produto/${Produto.id}`)}
                 className="d-block w-100"
                 src={
-                  Produto.fotos[0] &&
                   `${process.env.REACT_APP_BASE_URL}/images/produtos/${foto.nome_arquivo}.jpg`
                 }
                 alt="First slide"

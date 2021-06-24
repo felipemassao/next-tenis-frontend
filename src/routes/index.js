@@ -1,6 +1,6 @@
 import { Router, Route, Switch } from 'react-router-dom';
 import { HomePage } from '../pages';
-import { ConsultaProdutoId } from '../pages/Produto';
+import { ProdutoPage } from '../pages/Produto/ProdutoPage';
 import { HomeManutencao } from '../pages/Manutencao';
 import { ListarProduto } from '../pages/Manutencao/Listar';
 import { ManutIncluiProduto } from '../pages/Manutencao/Incluir';
@@ -15,7 +15,8 @@ const Routes = () => (
   <Router history={history}>
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/produto" component={ConsultaProdutoId} />
+      {/* <Route exact path="/produto" component={ConsultaProdutoId} /> */}
+      <Route exact path="/produto/:id" component={ProdutoPage} />
       <Route exact path="/signin" component={Login} />
       <PrivateRoute exact path="/manutencao" component={HomeManutencao} />
       <PrivateRoute exact path="/manutencao/listar" component={ListarProduto} />

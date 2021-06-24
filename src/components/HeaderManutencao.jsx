@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 
 const HeaderManutencao = () => {
+    const usuario = JSON.parse(localStorage.getItem('app-token'))
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Navbar.Brand href="/">
@@ -26,6 +27,7 @@ const HeaderManutencao = () => {
                 </Nav>
 
                 <Nav>
+                    <Image src={`${process.env.REACT_APP_BASE_URL}/images/usuarios/${usuario.username}.png`} roundedCircle />
                     <Button variant="light"><Link to="/">Logout</Link></Button>
                 </Nav>
             </Navbar.Collapse>

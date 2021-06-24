@@ -84,9 +84,9 @@ const HomePage = () => {
           </Col>
           <Col />
         </Row>
-        <Row>
+        {/* <Row> */}
           {!loading && produtos && createProdutoGrid(produtos)}
-        </Row>
+        {/* </Row> */}
       </Container>
     </>
   );
