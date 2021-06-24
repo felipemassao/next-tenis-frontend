@@ -81,6 +81,13 @@ const IncluiProduto = () => (
                         />
                         {errors.marca_id && touched.marca_id && errors.marca_id}
 
+                        {/*                     <select>
+                            {options.map((option) => (
+                                <option value={option.value}>{option.label}</option>
+                            ))}
+                        </select> */}
+
+
                         <input
                             type="modelo"
                             name="modelo"

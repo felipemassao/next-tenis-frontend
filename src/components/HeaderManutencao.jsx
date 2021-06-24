@@ -14,7 +14,7 @@ const HeaderManutencao = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/manutencao/listar">Listar Produtos Teste</Nav.Link>
+                    <Nav.Link href="/manutencao/listar">Listar Produtos</Nav.Link>
                     <Nav.Link href="/manutencao/incluir">Inclui Produto</Nav.Link>
                     <Nav.Link href="/manutencao/alterar">Altera Produto</Nav.Link>
                     <Nav.Link href="/manutencao/excluir">Deleta Produto</Nav.Link>
@@ -22,7 +22,7 @@ const HeaderManutencao = () => {
 
                 <Nav className="mr-auto">
                     <Nav.Link href="/manutencao/incluirUsu">Inclui Usuário</Nav.Link>
-                    <Nav.Link href="/manutencao/excluirUsu">Deleta Usuário</Nav.Link>
+                    <Nav.Link href="/manutencao/listarUsu">Listar Usuários</Nav.Link>
                 </Nav>
 
                 <Nav>

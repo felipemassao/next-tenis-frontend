@@ -10,7 +10,7 @@ const useListProduto = () => {
   useEffect(() => {
     listProduto()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setError(null);
         setProdutos(result);
         setLoading(false);
