@@ -6,6 +6,7 @@ import { ListarProduto } from '../pages/Manutencao/Listar';
 import { ManutIncluiProduto } from '../pages/Manutencao/Incluir';
 import { ManutExcluiProduto } from '../pages/Manutencao/Excluir';
 import { IncluiUsuario } from '../pages/Manutencao/IncluirUsu';
+import { ListaUsuario } from '../pages/Manutencao/ListarUsu';
 import { Login } from '../pages/SignIn';
 import NotFound from './NotFound';
 import PrivateRoute from './PrivateRoutes';
@@ -23,6 +24,7 @@ const Routes = () => (
       <PrivateRoute exact path="/manutencao/incluir" component={ManutIncluiProduto} />
       <PrivateRoute exact path="/manutencao/excluir" component={ManutExcluiProduto} />
       <PrivateRoute exact path="/manutencao/incluirUsu" component={IncluiUsuario} />
+      <PrivateRoute exact path="/manutencao/listarUsu" component={ListaUsuario} />      
       <PrivateRoute component={NotFound} />
     </Switch>
   </Router>
