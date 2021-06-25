@@ -1,12 +1,23 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const UserCard = ({ Usuario }) => {
   return (
-    <div>
-      <h4>Username: {Usuario.username}</h4>
-      <h5>E-Mail..: {Usuario.email}</h5>
-      <span>&nbsp;</span>
-    </div>
+    <tr>
+      <td>{Usuario.id}</td>
+      <td>{Usuario.username}</td>
+      <td>{Usuario.email}</td>
+      <td>
+        <Link to={"/manutencao"}>
+          <FontAwesomeIcon icon={faPen} />
+        </Link> /
+        <Link to={"/manutencao"}>
+          <FontAwesomeIcon icon={faTrash} />
+        </Link>
+      </td>
+    </tr>
   );
 };
 
