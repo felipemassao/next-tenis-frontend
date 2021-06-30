@@ -10,10 +10,10 @@ const UserCard = ({ Usuario }) => {
       <td>{Usuario.username}</td>
       <td>{Usuario.email}</td>
       <td>
-        <Link to={"/manutencao"}>
+        <Link to={`/manutencao/alterarUsu/${Usuario.id}`}>
           <FontAwesomeIcon icon={faPen} />
         </Link> /
-        <Link to={"/manutencao"}>
+        <Link to={`/manutencao/excluirUsu/${Usuario.id}`}>
           <FontAwesomeIcon icon={faTrash} />
         </Link>
       </td>

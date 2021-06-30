@@ -1,10 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import schema from '../../../schema';
+import userSchema from '../../Schemas/userSchema';
 import HeaderManutencao from '../../../components/HeaderManutencao';
 import { Wrap } from "../../../styles/components/Home.style";
-import usePostUsuario from "../../../hooks/usePostUsuario";
 import { history } from '../../history';
 
 const IncluiUsuario = () => {
@@ -13,10 +12,9 @@ const IncluiUsuario = () => {
 
     function onSubmit(values, actions) {
         axios.post(`${process.env.REACT_APP_BASE_URL}/users/cadastrar`, values)
-        setUserIncluded(true)
         
         console.log('SUBMIT: ', values);
-        // history.push('/manutencao')
+        history.push("/manutencao/okInclu")
     }
 
     return (
@@ -26,7 +24,7 @@ const IncluiUsuario = () => {
                 <h3>Inclusão de Usuário</h3>
                 <Formik
                     onSubmit={onSubmit}
-                    validationSchema={schema}
+                    validationSchema={userSchema}
                     validateOnMount
                     initialValues={{ username: '', email: '', password: '' 
                 }}    
@@ -48,7 +46,6 @@ const IncluiUsuario = () => {
                             <button type="submit">
                                 Incluir Usuário
                             </button>
-                            {userIncluded && <h1>Usuário Incluído com Sucesso !</h1>}
                         </Form>
                     )}
                 />

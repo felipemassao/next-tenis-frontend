@@ -1,0 +1,1 @@
+export { default as AlteraUsuario } from '../AlterarUsu/AlterarUsuario';

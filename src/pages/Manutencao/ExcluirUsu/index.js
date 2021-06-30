@@ -1,0 +1,1 @@
+export { default as ExcluiUsuario } from '../ExcluirUsu/ExcluirUsuario';

@@ -5,7 +5,7 @@ import { useGetProduto } from "../../hooks";
 
 const ProdutoPage = () => {
   const { id } = useParams();
-  const {loading, error, Produto} = useGetProduto(id);
+  const { Produto } = useGetProduto(id);
   console.log(id)
 
   return (
