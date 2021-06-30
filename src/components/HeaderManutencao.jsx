@@ -15,19 +15,23 @@ const HeaderManutencao = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/manutencao/listar">Listar Produtos</Nav.Link>
-                    <Nav.Link href="/manutencao/incluir">Inclui Produto</Nav.Link>
-                    <Nav.Link href="/manutencao/alterar">Altera Produto</Nav.Link>
-                    <Nav.Link href="/manutencao/excluir">Deleta Produto</Nav.Link>
+                    <Nav.Link href="#">PRODUTOS:&nbsp;</Nav.Link>
+                    <Nav.Link href="/manutencao/listar">Listar</Nav.Link>
+                    <Nav.Link href="/manutencao/incluir">Incluir</Nav.Link>
+
+                    {/* <Nav.Link href="/manutencao/alterar">Alterar</Nav.Link> */}
+                    {/* <Nav.Link href="/manutencao/excluir">Deletar</Nav.Link> */}
+
                 </Nav>
 
                 <Nav className="mr-auto">
-                    <Nav.Link href="/manutencao/incluirUsu">Inclui Usuário</Nav.Link>
-                    <Nav.Link href="/manutencao/listarUsu">Listar Usuários</Nav.Link>
+                    <Nav.Link href="#">USUÁRIOS:&nbsp;</Nav.Link>
+                    <Nav.Link href="/manutencao/listarUsu">Listar</Nav.Link>
+                    <Nav.Link href="/manutencao/incluirUsu">Incluir</Nav.Link>
                 </Nav>
 
                 <Nav>
-                    <Image src={`${process.env.REACT_APP_BASE_URL}/images/usuarios/${usuario.username}.png`} roundedCircle />
+                    <Image src={`${process.env.REACT_APP_BASE_URL}/images/usuarios/${usuario.username}.png`} roundedCircle height="45" />&nbsp;
                     <Button variant="light"><Link to="/">Logout</Link></Button>
                 </Nav>
             </Navbar.Collapse>

@@ -5,10 +5,6 @@ import useListUsuario from '../../../hooks/useListUsuario';
 import Table from "react-bootstrap/Table";
 
 const ListaUsuario = () => {
-  /*      const usuario = {
-        "username": "geraldo",
-        "email": "geraldo@email.com"
-      } */
   const [index, setIndex] = useState(0);
   const { loading, error, usuarios } = useListUsuario();
 
@@ -20,30 +16,22 @@ const ListaUsuario = () => {
 
   const createUserList = (usuarios) => usuarios.map(usuario => <UserCard Usuario={usuario} />);
 
-  // console.log(createUserList(usuarios))
-
   return (
     <>
       <HeaderManutencao />
-      {/* <div
-            style={{
-                maxWidth: 800,
-                margin: '30px auto',
-            }}
-            > */}
-      <Table striped bordered hover>
+      <Table responsive striped bordered hover>
         <thead>
           <tr>
             <th>id</th>
             <th>username</th>
             <th>email</th>
+            <th>ações</th>
           </tr>
         </thead>
         <tbody>
           {!loading && usuarios && createUserList(usuarios)}
         </tbody>
       </Table>
-      {/* </div> */}
     </>
   )
 

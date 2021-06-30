@@ -9,6 +9,7 @@ import useListProduto from "../hooks/useListProduto";
 import CardProduto from "../components/CardProduto";
 
 const HomePage = () => {
+  localStorage.clear();
   const [index, setIndex] = useState(0);
   const { loading, error, produtos } = useListProduto();
 

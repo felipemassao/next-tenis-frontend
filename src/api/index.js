@@ -1,2 +1,2 @@
 export { getProduto, listProduto } from './produto';
-export { postUsuario } from './usuario';
+export { getUsuario, postUsuario, listUsuario } from './usuario';
