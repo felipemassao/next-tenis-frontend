@@ -8,6 +8,7 @@ import { HomeManutencaoOkDel } from '../pages/Manutencao';
 import { ListaProduto } from '../pages/Manutencao/Listar';
 import { ManutIncluiProduto } from '../pages/Manutencao/Incluir';
 import { ManutExcluiProduto } from '../pages/Manutencao/Excluir';
+import { ManutAlteraProduto } from '../pages/Manutencao/Alterar';
 import { IncluiUsuario } from '../pages/Manutencao/IncluirUsu';
 import { ExcluiUsuario } from '../pages/Manutencao/ExcluirUsu';
 import { ListaUsuario } from '../pages/Manutencao/ListarUsu';
@@ -27,9 +28,12 @@ const Routes = () => (
       <PrivateRoute exact path="/manutencao/okAlter" component={HomeManutencaoOkAlter} />
       <PrivateRoute exact path="/manutencao/okDel" component={HomeManutencaoOkDel} />
       <PrivateRoute exact path="/manutencao/okInclu" component={HomeManutencaoOkInclu} />            
+
       <PrivateRoute exact path="/manutencao/listar" component={ListaProduto} />
       <PrivateRoute exact path="/manutencao/incluir" component={ManutIncluiProduto} />
-      <PrivateRoute exact path="/manutencao/excluir" component={ManutExcluiProduto} />
+      <PrivateRoute exact path="/manutencao/excluir/:id" component={ManutExcluiProduto} />
+      <PrivateRoute exact path="/manutencao/alterar/:id" component={ManutAlteraProduto} />
+
       <PrivateRoute exact path="/manutencao/incluirUsu" component={IncluiUsuario} />
       <PrivateRoute exact path="/manutencao/excluirUsu/:id" component={ExcluiUsuario} />
       <PrivateRoute exact path="/manutencao/listarUsu" component={ListaUsuario} />      

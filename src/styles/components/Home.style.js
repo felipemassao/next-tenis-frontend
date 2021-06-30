@@ -98,3 +98,8 @@ export const WrapLogin = styled.div`
   margin: 0 auto;
   padding-top: 20px;
 `
+
+export const WrapManut = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+`

@@ -10,8 +10,6 @@ const DetalheUsuarioDel = ({ Usuario }) => {
 
     function onSubmit(values, actions) {
         console.log(Usuario.id)
-        console.log("Entrei no onsubmit!")
-
         axios.delete(`${process.env.REACT_APP_BASE_URL}/users/${Usuario.id}`)
         history.push("/manutencao/okDel")
     }  
@@ -26,10 +24,7 @@ const DetalheUsuarioDel = ({ Usuario }) => {
         initialValues={{ id: Usuario.id, username: Usuario.username, email: Usuario.email 
     }}    
         render={({values, errors}) => (
-            <Form> 
-                <div>
-                    <Field name="id" type="text" placeholder="Id Usuário" />
-                </div>                
+            <Form>                
                 <div>
                     <Field name="username" type="text" placeholder="Username" />
                     <ErrorMessage name="username" />
@@ -39,12 +34,7 @@ const DetalheUsuarioDel = ({ Usuario }) => {
                     <ErrorMessage name="email" />
                 </div>
                 <br />
-
-                {/* {console.log(values)} */}
-
-                <button type="submit">
-                    Excluir Usuário
-                </button>
+                <button type="submit" onClick={() => onSubmit(Usuario.id)}>Delete</button>
             </Form>
         )}
     />

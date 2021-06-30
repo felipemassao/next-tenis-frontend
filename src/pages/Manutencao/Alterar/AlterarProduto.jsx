@@ -1,20 +1,20 @@
 import { useParams } from "react-router-dom";
-import DetalheProdutoDel from "./components/ProdutoDetalhesDel";
+import ProdutoDetalhes from "./components/ProdutoDetalhes";
 import HeaderManutencao from "../../../components/HeaderManutencao";
 import { useGetProduto } from "../../../hooks";
 
-const ManutExcluirProduto = () => {
+const ManutAlteraProduto = () => {
         const { id } = useParams();
         const {loading, error, Produto} = useGetProduto(id);
-        
+        console.log(id)
         console.log(Produto)
-
+      
         return (
           <>
             <HeaderManutencao />
-            {Produto && <DetalheProdutoDel Produto={Produto}/>}
+            {Produto && <ProdutoDetalhes Produto={Produto}/>}
           </>
         );
       };
       
-export default ManutExcluirProduto;
+export default ManutAlteraProduto;
