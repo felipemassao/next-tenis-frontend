@@ -16,10 +16,10 @@ const ProdCard = ({ Produto }) => {
       <td>{Produto.["Estilo.descricao"]}</td>
       <td>{Produto.preco}</td>
       <td>
-        <Link to={"/manutencao"}>
+        <Link to={`/manutencao/alterar/${Produto.id}`}>
           <FontAwesomeIcon icon={faPen} />
         </Link> /
-        <Link to={"/manutencao/excluir"}>
+        <Link to={`/manutencao/excluir/${Produto.id}`}>
           <FontAwesomeIcon icon={faTrash} />
         </Link>
       </td>

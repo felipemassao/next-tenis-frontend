@@ -1,0 +1,1 @@
+export { default as ManutAlteraProduto } from '../Alterar/AlterarProduto';
