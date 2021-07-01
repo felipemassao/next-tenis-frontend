@@ -31,41 +31,86 @@ return (
                     initialValues={{ descricao: '', marca_id: '', modelo: '', cor_id: '', tamanho: '', genero: '', estilo_id: '', preco: ''      
                 }}    
                     render={({values, errors}) => (
-                        <Form> 
-                            <div>
-                                <Field name="descricao" type="text" placeholder="Descricao" />
-                                <ErrorMessage name="descricao" />
-                            </div>
-                            <div>
-                                <Field name="marca_id" type="text" placeholder="ID da Marca" />
-                                <ErrorMessage name="marca_id" />
-                            </div>
-                            <div>
-                                <Field name="modelo" type="text" placeholder="Modelo" />
-                                <ErrorMessage name="modelo" />
-                            </div>
-                            <div>
-                                <Field name="cor_id" type="text" placeholder="ID da Cor" />
-                                <ErrorMessage name="cor_id" />
-                            </div>
-                            <div>
-                                <Field name="tamanho" type="text" placeholder="Tamanho" />
-                                <ErrorMessage name="tamanho" />
-                            </div>
-                            <div>
-                                <Field name="genero" type="text" placeholder="Gênero" />
-                                <ErrorMessage name="Genero" />
-                            </div>
-                            <div>
-                                <Field name="estilo_id" type="text" placeholder="ID do Estilo" />
-                                <ErrorMessage name="estilo_id" />
-                            </div>                                                                                    
-                            <div>
-                                <Field name="preco" type="text" placeholder="Preço" />
-                                <ErrorMessage name="preco" />
-                            </div>   
 
-                            <br />
+                            <Form>                
+                            <table>
+                                <tr>
+                                    <td><label>Descrição:&nbsp;</label></td>
+                                    <td>
+                                        <div>                            
+                                            <Field name="descricao" type="text" placeholder="Descrição" />
+                                            <ErrorMessage name="descricao" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>ID da Marca:&nbsp;</label></td>
+                                    <td>
+                                        <div>                   
+                                            <Field name="marca_id" type="text" placeholder="ID da Marca" />
+                                            <ErrorMessage name="marca_id" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Modelo:&nbsp;</label></td>
+                                    <td>
+                                        <div>                  
+                                            <Field name="modelo" type="text" placeholder="Modelo" />
+                                            <ErrorMessage name="modelo" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>ID da Cor:&nbsp;</label></td>
+                                    <td>
+                                        <div>                    
+                                            <Field name="cor_id" type="text" placeholder="ID da Cor" />
+                                            <ErrorMessage name="cor_id" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Tamanho:&nbsp;</label></td>
+                                    <td>
+                                        <div>                                                
+                                            <Field name="tamanho" type="text" placeholder="Tamanho" />
+                                            <ErrorMessage name="tamanho" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Gênero:&nbsp;</label></td>
+                                    <td>
+                                        <div>                                                
+                                            <Field name="genero" type="text" placeholder="Gênero" />
+                                            <ErrorMessage name="genero" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>ID do Estilo:&nbsp;</label></td>
+                                    <td>
+                                        <div>                                                
+                                            <Field name="estilo_id" type="text" placeholder="ID do Estilo" />
+                                            <ErrorMessage name="estilo_id" />
+                                        </div>
+                                    </td>
+                                </tr>
+                
+                                <tr>
+                                    <td><label>Preço:&nbsp;</label></td>
+                                    <td>
+                                        <div>                                                
+                                            <Field name="preco" type="text" placeholder="Preço" />
+                                            <ErrorMessage name="preco" />
+                                        </div>
+                                    </td>
+                                </tr>
+                
+                            </table>
+                            <br />                        
+
                             <button type="submit">
                                 Incluir Produto
                             </button>

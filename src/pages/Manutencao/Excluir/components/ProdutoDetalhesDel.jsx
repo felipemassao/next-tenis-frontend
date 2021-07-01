@@ -9,7 +9,9 @@ const DetalheProdutoDel = ({ Produto }) => {
     const [prodModified, setProdModified] = useState(false);
 
     function onSubmit(values, actions) {
+        console.log("Vou deletar")
         console.log(Produto.id)
+        
         axios.delete(`${process.env.REACT_APP_BASE_URL}/produtos/${Produto.id}`)
         history.push("/manutencao/okDel")
     }  

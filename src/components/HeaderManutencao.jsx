@@ -31,7 +31,7 @@ const HeaderManutencao = () => {
                 </Nav>
 
                 <Nav>
-                    <Image src={`${process.env.REACT_APP_BASE_URL}/images/usuarios/${usuario.username}.png`} roundedCircle height="45" />&nbsp;
+                    <Image src={`${process.env.REACT_APP_BASE_URL}/images/usuarios/${usuario.username}.png`} roundedCircle height="45" width="45" />&nbsp;
                     <Button variant="light"><Link to="/">Logout</Link></Button>
                 </Nav>
             </Navbar.Collapse>
