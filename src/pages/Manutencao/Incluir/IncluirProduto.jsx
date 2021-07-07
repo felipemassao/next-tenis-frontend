@@ -1,27 +1,34 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form, DropDown, ErrorMessage } from 'formik';
 import prodSchema from '../../Schemas/prodSchema';
 import HeaderManutencao from '../../../components/HeaderManutencao';
 import { Wrap } from "../../../styles/components/Home.style";
 // import usePostUsuario from "../../../hooks/usePostUsuario";
 import { history } from '../../history';
+import Header from "../../../components/Header";
 
 const IncluiProduto = () => {
     //      estado        método, utilizado para alterar o estado
     const [prodIncluded, setProdIncluded] = useState(false);
+    const [error, setError] = useState(null);
 
     function onSubmit(values, actions) {
         axios.post(`${process.env.REACT_APP_BASE_URL}/produtos`, values)
-        setProdIncluded(true)
-        
-        console.log('SUBMIT: ', values);
-        // history.push('/manutencao')
+            .then(() => {
+                setProdIncluded(true);
+                setError(null);
+            })
+            .catch((err) => {
+                setProdIncluded(null);
+                setError(err.response.data.error);
+                console.log(err.response)
+            });
     } 
 
 return (
     <>
-        <HeaderManutencao />
+        <Header />
         <Wrap>
                 <h3>Inclusão de Produto</h3>
                 <Formik
@@ -83,7 +90,10 @@ return (
                                     <td><label>Gênero:&nbsp;</label></td>
                                     <td>
                                         <div>                                                
-                                            <Field name="genero" type="text" placeholder="Gênero" />
+                                            <Field as="select" name="genero">
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Feminino">Feminino</option>
+                                            </Field>
                                             <ErrorMessage name="genero" />
                                         </div>
                                     </td>
@@ -114,7 +124,8 @@ return (
                             <button type="submit">
                                 Incluir Produto
                             </button>
-                            {prodIncluded && <h1>Produto Incluído com Sucesso !</h1>}
+                            {!error && prodIncluded && <h1>Produto Incluído com Sucesso !</h1>}
+                            {error && <h1>{error}</h1>}
                         </Form>
                     )}
                 />

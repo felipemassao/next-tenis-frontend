@@ -3,6 +3,7 @@ import ProdCard from './cardProdutos';
 import HeaderManutencao from '../../../components/HeaderManutencao';
 import useListProduto from '../../../hooks/useListProduto';
 import Table from "react-bootstrap/Table";
+import Header from "../../../components/Header";
 
 const ListaProduto = () => {
   // const [index, setIndex] = useState(0);
@@ -18,7 +19,7 @@ const ListaProduto = () => {
 
   return (
     <>
-      <HeaderManutencao />
+      <Header />
       <Table responsive striped bordered hover>
         <thead>
           <tr>

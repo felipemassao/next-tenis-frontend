@@ -4,8 +4,17 @@ import Image from 'react-bootstrap/Image'
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+import { history } from '../pages/history';
 
 const Header = () => {
+    
+    const usuario = JSON.parse(localStorage.getItem('app-token'));
+
+    const logout = () => {
+        localStorage.clear();
+        history.push('/');
+    };
+
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
             <Navbar.Brand href="/">
@@ -16,10 +25,36 @@ const Header = () => {
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/produto">Consulta Produto</Nav.Link>
-                    </Nav>                   
-                    <Nav>
-                        <Button variant="light"><Link to="/signin">Restrito</Link></Button>
                     </Nav>
+                    {
+                        usuario ?
+                        <>
+                            <Nav className="mr-auto">
+                            <Nav.Link href="#">PRODUTOS:&nbsp;</Nav.Link>
+                            <Nav.Link href="/manutencao/listar">Listar</Nav.Link>
+                            <Nav.Link href="/manutencao/incluir">Incluir</Nav.Link>
+
+                            {/* <Nav.Link href="/manutencao/alterar">Alterar</Nav.Link> */}
+                            {/* <Nav.Link href="/manutencao/excluir">Deletar</Nav.Link> */}
+
+                            </Nav>
+
+                            <Nav className="mr-auto">
+                                <Nav.Link href="#">USUÁRIOS:&nbsp;</Nav.Link>
+                                <Nav.Link href="/manutencao/listarUsu">Listar</Nav.Link>
+                                <Nav.Link href="/manutencao/incluirUsu">Incluir</Nav.Link>
+                            </Nav>
+
+                            <Nav>
+                                <Image src={`${process.env.REACT_APP_BASE_URL}/images/usuarios/${usuario.username}.png`} roundedCircle height="45" width="45" />&nbsp;
+                                <Button variant="light" onClick={logout}>Logout</Button>
+                            </Nav>
+                        </>
+                        :
+                        <Nav>
+                            <Button variant="light"><Link to="/signin">Restrito</Link></Button>
+                        </Nav>
+                    }
                 </Navbar.Collapse>
         </Navbar>
     )

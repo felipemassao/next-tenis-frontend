@@ -5,6 +5,7 @@ import userSchema from '../../Schemas/userSchema';
 import HeaderManutencao from '../../../components/HeaderManutencao';
 import { Wrap } from "../../../styles/components/Home.style";
 import { history } from '../../history';
+import Header from "../../../components/Header";
 
 const IncluiUsuario = () => {
     //      estado        método, utilizado para alterar o estado
@@ -19,7 +20,7 @@ const IncluiUsuario = () => {
 
     return (
         <>
-            <HeaderManutencao />
+            <Header />
             <Wrap>
                 <h3>Inclusão de Usuário</h3>
                 <Formik

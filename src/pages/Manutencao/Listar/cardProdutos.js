@@ -13,7 +13,7 @@ const ProdCard = ({ Produto }) => {
       <td>{Produto["Core.descricao"]}</td>
       <td>{Produto.tamanho}</td>
       <td>{Produto.genero}</td>
-      <td>{Produto.["Estilo.descricao"]}</td>
+      <td>{Produto["Estilo.descricao"]}</td>
       <td>{Produto.preco}</td>
       <td>
         <Link to={`/manutencao/alterar/${Produto.id}`}>

@@ -3,6 +3,7 @@ import UserCard from './cardUsuarios';
 import HeaderManutencao from '../../../components/HeaderManutencao';
 import useListUsuario from '../../../hooks/useListUsuario';
 import Table from "react-bootstrap/Table";
+import Header from "../../../components/Header";
 
 const ListaUsuario = () => {
   const [index, setIndex] = useState(0);
@@ -18,7 +19,7 @@ const ListaUsuario = () => {
 
   return (
     <>
-      <HeaderManutencao />
+      <Header />
       <Table responsive striped bordered hover>
         <thead>
           <tr>

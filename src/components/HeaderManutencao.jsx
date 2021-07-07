@@ -4,9 +4,16 @@ import Image from 'react-bootstrap/Image'
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+import { history } from '../pages/history';
 
 const HeaderManutencao = () => {
-    const usuario = JSON.parse(localStorage.getItem('app-token'))
+    const usuario = JSON.parse(localStorage.getItem('app-token'));
+
+    const logout = () => {
+        localStorage.clear();
+        history.push('/');
+    };
+
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Navbar.Brand href="/">
@@ -32,7 +39,7 @@ const HeaderManutencao = () => {
 
                 <Nav>
                     <Image src={`${process.env.REACT_APP_BASE_URL}/images/usuarios/${usuario.username}.png`} roundedCircle height="45" width="45" />&nbsp;
-                    <Button variant="light"><Link to="/">Logout</Link></Button>
+                    <Button variant="light" onClick={logout}>Logout</Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

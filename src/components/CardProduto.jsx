@@ -23,12 +23,6 @@ const CardProduto = ({ Produto }) => {
         </Carousel>
         <Card.Title>{Produto.descricao}</Card.Title>
         <Card.Text>
-          <p>Marca: {Produto["Marca.descricao"]}</p>
-          <p>Modelo: {Produto.modelo}</p>
-          <p>Cor: {Produto["Core.descricao"]}</p>
-          <p>Tamanho: {Produto.tamanho}</p>
-          <p>Genero: {Produto.genero}</p>
-          <p>Estilo: {Produto["Estilo.descricao"]}</p>
           <p>Preço: {Produto.preco}</p>
         </Card.Text>
       </Card.Body>

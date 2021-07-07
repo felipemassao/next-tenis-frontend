@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import UsuarioDetalhes from "./components/UsuarioDetalhes";
 import HeaderManutencao from "../../../components/HeaderManutencao";
 import { useGetUsuario } from "../../../hooks";
+import Header from "../../../components/Header";
 
 const AlteraUsuario = () => {
         const { id } = useParams();
@@ -11,7 +12,7 @@ const AlteraUsuario = () => {
       
         return (
           <>
-            <HeaderManutencao />
+            <Header />
             {Usuario && <UsuarioDetalhes Usuario={Usuario}/>}
           </>
         );

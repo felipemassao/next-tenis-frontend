@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import ProdutoDetalhes from "./components/ProdutoDetalhes";
 import HeaderManutencao from "../../../components/HeaderManutencao";
 import { useGetProduto } from "../../../hooks";
+import Header from "../../../components/Header";
 
 const ManutAlteraProduto = () => {
         const { id } = useParams();
@@ -11,7 +12,7 @@ const ManutAlteraProduto = () => {
       
         return (
           <>
-            <HeaderManutencao />
+            <Header />
             {Produto && <ProdutoDetalhes Produto={Produto}/>}
           </>
         );
