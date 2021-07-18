@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
-import { listMarca } from "../api";
+import { listCor } from "../api";
 
-const useListMarca = () => {
+const useListCor = () => {
   const [loading, setLoading] = useState(true);
-  const [marcas, setMarcas] = useState([]);
+  const [cores, setCores] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    listMarca()
+    listCor()
       .then((result) => {
         // console.log(result);
         setError(null);
-        setMarcas(result);
+        setCores(result);
         setLoading(false);
       })
       .catch((error) => {
         setLoading(false);
-        setMarcas(null);
+        setCores(null);
         setError(error.message);
       });
   }, []);
 
-  return { loading, error, marcas };
+  return { loading, error, cores };
 };
 
-export default useListMarca;
+export default useListCor;
