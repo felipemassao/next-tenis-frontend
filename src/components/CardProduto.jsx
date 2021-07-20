@@ -2,6 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
 import { history } from '../pages/history';
+import NumberFormat from 'react-number-format';
 
 const CardProduto = ({ Produto }) => {
   return (
@@ -23,7 +24,19 @@ const CardProduto = ({ Produto }) => {
         </Carousel>
         <Card.Title>{Produto.descricao}</Card.Title>
         <Card.Text>
-          <p>Preço: {Produto.preco}</p>
+          {/* <p>Preço: {Produto.preco}</p> */}
+
+            <NumberFormat
+              displayType={'text'}
+              decimalScale={2}
+              decimalSeparator=","
+              fixedDecimalScale
+              placeholder="$ 0,00"
+              prefix="$ "
+              thousandSeparator="."
+              value={Produto.preco}
+            />
+
         </Card.Text>
       </Card.Body>
     </Card>

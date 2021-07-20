@@ -33,10 +33,6 @@ const Header = () => {
                             <Nav.Link href="#">PRODUTOS:&nbsp;</Nav.Link>
                             <Nav.Link href="/manutencao/listar">Listar</Nav.Link>
                             <Nav.Link href="/manutencao/incluir">Incluir</Nav.Link>
-
-                            {/* <Nav.Link href="/manutencao/alterar">Alterar</Nav.Link> */}
-                            {/* <Nav.Link href="/manutencao/excluir">Deletar</Nav.Link> */}
-
                             </Nav>
 
                             <Nav className="mr-auto">
