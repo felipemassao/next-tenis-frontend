@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
-import { listMarca } from "../api";
+import { listEstilo } from "../api";
 
-const useListMarca = () => {
+const useListEstilo = () => {
   const [loading, setLoading] = useState(true);
-  const [marcas, setMarcas] = useState([]);
+  const [estilos, setEstilos] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    listMarca()
+    listEstilo()
       .then((result) => {
         // console.log(result);
         setError(null);
-        setMarcas(result);
+        setEstilos(result);
         setLoading(false);
       })
       .catch((error) => {
         setLoading(false);
-        setMarcas(null);
+        setEstilos(null);
         setError(error.message);
       });
   }, []);
 
-  return { loading, error, marcas };
+  return { loading, error, estilos };
 };
 
-export default useListMarca;
+export default useListEstilo;
