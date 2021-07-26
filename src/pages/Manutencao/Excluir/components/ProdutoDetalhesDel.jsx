@@ -1,12 +1,13 @@
 import axios from 'axios';
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from 'react';
 import { Wrap, Form } from "../../../../styles/components/Home.style";
 import { Formik, Field, ErrorMessage } from 'formik';
 import prodSchema from '../../../Schemas/prodSchema';
 import { history } from '../../../history';
 
 const DetalheProdutoDel = ({ Produto }) => {
-    const [prodModified, setProdModified] = useState(false);
+    // const [prodModified, setProdModified] = useState(false);
 
     function onSubmit(values, actions) {
         console.log("Vou deletar")

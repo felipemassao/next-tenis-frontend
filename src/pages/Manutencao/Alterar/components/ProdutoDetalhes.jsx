@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from "react";
+import React from "react";
 import { Wrap } from "../../../../styles/components/Home.style";
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import prodSchema from '../../../Schemas/prodSchema';
@@ -10,9 +10,9 @@ import useListEstilo from '../../../../hooks/useListEstilo';
 
 const DetalheProduto = ({ Produto }) => {
     //      estado        método, utilizado para alterar o estado
-    const [prodModified, setProdModified] = useState(false);
+    // const [prodModified, setProdModified] = useState(false);
 
-    const { loading, marcas } = useListMarca();
+    const { marcas } = useListMarca();
     //console.log(marcas)
 
     const { cores } = useListCor();

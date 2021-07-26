@@ -1,5 +1,6 @@
 import { Router, Route, Switch } from 'react-router-dom';
 import { HomePage } from '../pages';
+import { Sobre } from '../pages';
 import { ProdutoPage } from '../pages/Produto/ProdutoPage';
 import { HomeManutencao } from '../pages/Manutencao';
 import { HomeManutencaoOkAlter } from '../pages/Manutencao';
@@ -21,9 +22,11 @@ import { history } from '../pages/history';
 const Routes = () => (
   <Router history={history}>
     <Switch>
-      <Route exact path="/" component={HomePage} />
+      <Route exact path="/:gen" component={HomePage} />
       <Route exact path="/produto/:id" component={ProdutoPage} />
-      <Route exact path="/signin" component={Login} />
+      <Route exact path="/signin/signin" component={Login} />
+      <Route exact path="/sobre/sobre" component={Sobre} />
+
       <PrivateRoute exact path="/manutencao" component={HomeManutencao} />
       <PrivateRoute exact path="/manutencao/okAlter" component={HomeManutencaoOkAlter} />
       <PrivateRoute exact path="/manutencao/okDel" component={HomeManutencaoOkDel} />

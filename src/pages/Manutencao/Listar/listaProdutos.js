@@ -1,6 +1,5 @@
 import React from 'react';
 import ProdCard from './cardProdutos';
-import HeaderManutencao from '../../../components/HeaderManutencao';
 import useListProduto from '../../../hooks/useListProduto';
 import Table from "react-bootstrap/Table";
 import Header from "../../../components/Header";
@@ -20,9 +19,19 @@ const ListaProduto = () => {
   return (
     <>
       <Header />
+      
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/manutencao/listar"><b>MANUTENÇÃO DE PRODUTOS</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/manutencao/incluir"><img src="/images/icone_incluir.jpg" alt="Incluir Produto" height="35px"></img>Incluir</a>
+        </li>
+      </ul>
+
       <Table responsive striped bordered hover>
         <thead>
-          <tr>
+          <tr bgcolor="#add8e6">
             <th>id</th>
             <th>descricao</th>
             <th>marca_id</th>

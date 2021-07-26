@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from "react";
+import React from "react";
 import { Wrap } from "../../../../styles/components/Home.style";
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import userSchema from '../../../Schemas/userSchema';
@@ -7,7 +7,7 @@ import { history } from '../../../history';
 
 const DetalheUsuario = ({ Usuario }) => {
     //      estado        método, utilizado para alterar o estado
-    const [userModified, setUserModified] = useState(false);
+    // const [userModified, setUserModified] = useState(false);
 
     function onSubmit(values, actions) {
         axios.put(`${process.env.REACT_APP_BASE_URL}/users/${Usuario.id}`, values)
