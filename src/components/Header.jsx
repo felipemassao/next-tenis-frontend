@@ -12,33 +12,29 @@ const Header = () => {
 
     const logout = () => {
         localStorage.clear();
-        history.push('/');
+        history.push('/0');
     };
 
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/0">
                 <Image src={`${process.env.REACT_APP_BASE_URL}/images/logo_next_tennis_inline.jpg`} width="140"/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse id="basic-navbar-nav">          
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/produto">Consulta Produto</Nav.Link>
+                        <Nav.Link href="/0">Home</Nav.Link>
+                        <Nav.Link href="/1">Masculino</Nav.Link>
+                        <Nav.Link href="/2">Feminino</Nav.Link>
+                        <Nav.Link href="/sobre/sobre">Quem Somos</Nav.Link>
                     </Nav>
                     {
                         usuario ?
                         <>
                             <Nav className="mr-auto">
-                            <Nav.Link href="#">PRODUTOS:&nbsp;</Nav.Link>
-                            <Nav.Link href="/manutencao/listar">Listar</Nav.Link>
-                            <Nav.Link href="/manutencao/incluir">Incluir</Nav.Link>
-                            </Nav>
-
-                            <Nav className="mr-auto">
-                                <Nav.Link href="#">USUÁRIOS:&nbsp;</Nav.Link>
-                                <Nav.Link href="/manutencao/listarUsu">Listar</Nav.Link>
-                                <Nav.Link href="/manutencao/incluirUsu">Incluir</Nav.Link>
+                            <Nav.Link href="#">MANUTENÇÃO:&nbsp;&nbsp;</Nav.Link>
+                            <Nav.Link href="/manutencao/listar">Produtos</Nav.Link>
+                            <Nav.Link href="/manutencao/listarUsu">Usuários</Nav.Link>
                             </Nav>
 
                             <Nav>
@@ -48,9 +44,9 @@ const Header = () => {
                         </>
                         :
                         <Nav>
-                            <Button variant="light"><Link to="/signin">Restrito</Link></Button>
+                            <Button variant="light"><Link to="/signin/signin">Restrito</Link></Button>
                         </Nav>
-                    }
+                    }                    
                 </Navbar.Collapse>
         </Navbar>
     )

@@ -33,7 +33,7 @@ const Login = () => {
                     }
                 }).catch(error => {
                     console.log("Deu erro ", error)
-                    history.push('/')
+                    history.push('/0')
                 })
                     
         }

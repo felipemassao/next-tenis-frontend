@@ -1,15 +1,15 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import userSchema from '../../Schemas/userSchema';
-import HeaderManutencao from '../../../components/HeaderManutencao';
 import { Wrap } from "../../../styles/components/Home.style";
 import { history } from '../../history';
 import Header from "../../../components/Header";
 
 const IncluiUsuario = () => {
     //      estado        método, utilizado para alterar o estado
-    const [userIncluded, setUserIncluded] = useState(false);
+    // const [userIncluded, setUserIncluded] = useState(false);
 
     function onSubmit(values, actions) {
         axios.post(`${process.env.REACT_APP_BASE_URL}/users/cadastrar`, values)

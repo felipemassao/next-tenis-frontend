@@ -1,12 +1,12 @@
 import axios from 'axios';
-import React, { useState } from "react";
+import React from "react";
 import { Wrap } from "../../../../styles/components/Home.style";
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import userSchema from '../../../Schemas/userSchema';
 import { history } from '../../../history';
 
 const DetalheUsuarioDel = ({ Usuario }) => {
-    const [userModified, setUserModified] = useState(false);
+    // const [userModified, setUserModified] = useState(false);
 
     function onSubmit(values, actions) {
         console.log(Usuario.id)

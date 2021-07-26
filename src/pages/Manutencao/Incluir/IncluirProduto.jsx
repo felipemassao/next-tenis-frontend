@@ -12,7 +12,7 @@ const IncluiProduto = () => {
     const [prodIncluded, setProdIncluded] = useState(false);
     const [error, setError] = useState(null);
 
-    const { loading, marcas } = useListMarca();
+    const { marcas } = useListMarca();
     //console.log(marcas)
 
     const { cores } = useListCor();

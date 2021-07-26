@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-//import _ from 'lodash';
 import { listProduto } from "../api";
 
 const useListProduto = () => {
   const [loading, setLoading] = useState(true);
-  const [produtos, setProdutos] = useState(null);
+  const [produtos, setProdutos] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -21,6 +20,9 @@ const useListProduto = () => {
         setError(error.message);
       });
   }, []);
+
+  // const produtosGenero = produtos.filter(retornaGenero);
+  // console.log(produtosGenero);
 
   return { loading, error, produtos };
 };

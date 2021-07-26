@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Carousel from "react-bootstrap/Carousel";
 import Row from "react-bootstrap/Row";
@@ -9,21 +10,48 @@ import useListProduto from "../hooks/useListProduto";
 import CardProduto from "../components/CardProduto";
 
 const HomePage = () => {
+  const { gen } = useParams();
+  console.log(gen);
+
   const [index, setIndex] = useState(0);
-  const { loading, error, produtos } = useListProduto();
+  const { loading, produtos } = useListProduto();
+
+  function retornaGenero(value){
+    if (gen === "1")
+      {
+        console.log("Entrei no if 1 ...")
+        if (value.genero === "Masculino")
+        return value;
+      }
+    else if (gen === "2")
+      {
+      console.log("Entrei no if 2 ...")
+      if (value.genero === "Feminino")
+      return value;
+      }
+        else
+        {
+          console.log("Entrei no if diferente 1 e 2 ...")
+          if (value.genero === "Feminino" || value.genero ==="Masculino")
+          return value;
+        };
+  }
+
+  const produtosGenero = produtos.filter(retornaGenero);
+  console.log(produtosGenero);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
-  const createProdutoGrid = (produtos) => {
+  const createProdutoGrid = (produtosGenero) => {
     const produtoGrid = [];
-    for(let i = 0; i < produtos.length; i += 3){
+    for(let i = 0; i < produtosGenero.length; i += 3){
       produtoGrid.push(
         <CardGroup>
-          <CardProduto Produto={produtos[i]}/>
-          { i + 1 < produtos.length && <CardProduto Produto={produtos[i+1]}/> }
-          { i + 2 < produtos.length && <CardProduto Produto={produtos[i+2]}/> }
+          <CardProduto Produto={produtosGenero[i]}/>
+          { i + 1 < produtosGenero.length && <CardProduto Produto={produtosGenero[i+1]}/> }
+          { i + 2 < produtosGenero.length && <CardProduto Produto={produtosGenero[i+2]}/> }
         </CardGroup>
       )
     }
@@ -37,8 +65,6 @@ const HomePage = () => {
         <Row>
           <Col />
 
-          {/* <Col xs={6}> */}
-
             <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
                 <img
@@ -47,13 +73,6 @@ const HomePage = () => {
                   src="/images/banners/banner01.jpg"
                   alt="First slide"
                 />
-
-                {/* <Carousel.Caption>
-                  <h3>First slide label</h3>
-                  <p>
-                    Nulla vitae elit libero, a pharetra augue mollis interdum.
-                  </p>
-                </Carousel.Caption> */}
 
               </Carousel.Item>
               <Carousel.Item>
@@ -65,13 +84,6 @@ const HomePage = () => {
                   alt="Second slide"
                 />
 
-                {/* <Carousel.Caption>
-                  <h3>Second slide label</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </Carousel.Caption> */}
-
               </Carousel.Item>
               <Carousel.Item>
                 <img
@@ -81,24 +93,14 @@ const HomePage = () => {
                   alt="Third slide"
                 />
 
-                {/* <Carousel.Caption>
-                  <h3>Third slide label</h3>
-                  <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur.
-                  </p>
-                </Carousel.Caption> */}
-
               </Carousel.Item>
             </Carousel>
 
-          {/* </Col> */}
-
           <Col />
         </Row>
-        {/* <Row> */}
-          {!loading && produtos && createProdutoGrid(produtos)}
-        {/* </Row> */}
+
+        {!loading && produtosGenero && createProdutoGrid(produtosGenero)}
+
       </Container>
     </>
   );
