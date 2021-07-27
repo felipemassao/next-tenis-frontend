@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Carousel from "react-bootstrap/Carousel";
 import Row from "react-bootstrap/Row";
@@ -9,21 +9,26 @@ import Header from "../components/Header";
 import useListProduto from "../hooks/useListProduto";
 import CardProduto from "../components/CardProduto";
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 const HomePage = () => {
-  const { gen } = useParams();
-  console.log(gen);
+  const query = useQuery();
+  console.log(query.get('genero'));
+  const genero = query.get('genero');
 
   const [index, setIndex] = useState(0);
   const { loading, produtos } = useListProduto();
 
   function retornaGenero(value){
-    if (gen === "1")
+    if (genero === "masculino")
       {
         console.log("Entrei no if 1 ...")
         if (value.genero === "Masculino")
         return value;
       }
-    else if (gen === "2")
+    else if (genero === "feminino")
       {
       console.log("Entrei no if 2 ...")
       if (value.genero === "Feminino")
@@ -32,7 +37,8 @@ const HomePage = () => {
         else
         {
           console.log("Entrei no if diferente 1 e 2 ...")
-          if (value.genero === "Feminino" || value.genero ==="Masculino")
+          // if (value.genero === "Feminino" || value.genero ==="Masculino")
+          value = "masculino";
           return value;
         };
   }

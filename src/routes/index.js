@@ -22,7 +22,7 @@ import { history } from '../pages/history';
 const Routes = () => (
   <Router history={history}>
     <Switch>
-      <Route exact path="/:gen" component={HomePage} />
+      <Route exact path="/" component={HomePage} />
       <Route exact path="/produto/:id" component={ProdutoPage} />
       <Route exact path="/signin/signin" component={Login} />
       <Route exact path="/sobre/sobre" component={Sobre} />
